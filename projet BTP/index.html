@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AFRIC-CONNECT | Plateforme BTP UEMOA</title>
+    <meta name="description" content="AFRIC-CONNECT connecte clients et professionnels du BTP dans les huit pays de l'UEMOA." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="AFRIC-CONNECT home">
+          <span class="logo-mark">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 18h22v8H14zm0 14h34v8H14zm0 14h18v8H14zm30-12 12-10v32h-8V28l-4 4z" fill="currentColor"/>
+              <path d="M44 15l16 12-4 4-12-10z" fill="#FF6B00" opacity="0.9"/>
+              <path d="M18 48h8v10h-8zM35 48h8v10h-8z" fill="#00A651" opacity="0.9"/>
+            </svg>
+          </span>
+          <span class="logo-text">
+            <strong>AFRIC</strong>
+            <small>CONNECT</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Principal">
+          <a href="index.html" class="active">Accueil</a>
+          <a href="offres.html">Appels d'Offres</a>
+          <a href="professionnels.html">Professionnels</a>
+          <a href="tarifs.html">Tarifs</a>
+          <a href="comment-ca-marche.html">Comment ça marche</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="auth.html" class="btn btn-outline">Se connecter</a>
+          <a href="auth.html" class="btn btn-primary">S'inscrire</a>
+          <a href="dashboard-client.html" class="btn btn-accent">Publier un appel d'offre</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="tag">Plateforme BTP dédiée à l'UEMOA</span>
+            <h1>Le BTP UEMOA de Confiance : <span>Publiez. Postulez. Construisez.</span></h1>
+            <p>
+              AFRIC-CONNECT connecte les clients et les professionnels du BTP des huit pays de l'UEMOA dans un environnement sûr,
+              vérifié et encadré par un tiers de confiance responsable.
+            </p>
+
+            <div class="hero-actions">
+              <a href="offres.html" class="btn btn-primary">Voir les offres</a>
+              <a href="professionnels.html" class="btn btn-secondary">Trouver un pro</a>
+            </div>
+
+            <form class="search-bar" aria-label="Recherche d'offres" data-home-search-form>
+              <div>
+                <label>Métier</label>
+                <select name="category">
+                  <option value="">Tous</option>
+                  <option value="Maçonnerie">Maçonnerie</option>
+                  <option value="Électricité">Électricité</option>
+                  <option value="Route">Route</option>
+                  <option value="Architecture">Architecture</option>
+                  <option value="Forage">Forage</option>
+                </select>
+              </div>
+              <div>
+                <label>Ville</label>
+                <select name="city">
+                  <option value="">Toutes</option>
+                  <option value="Abidjan">Abidjan</option>
+                  <option value="Dakar">Dakar</option>
+                  <option value="Bamako">Bamako</option>
+                  <option value="Ouagadougou">Ouagadougou</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary search-btn">Rechercher</button>
+            </form>
+
+            <div class="hero-stats">
+              <div>
+                <strong>2500+</strong>
+                <span>Pros vérifiés</span>
+              </div>
+              <div>
+                <strong>800+</strong>
+                <span>Chantiers</span>
+              </div>
+              <div>
+                <strong>98%</strong>
+                <span>Confiance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="visual-card main-card">
+              <div class="mini-badge">Offre validée</div>
+              <h3>Construction de maison moderne</h3>
+              <ul>
+                <li>Abidjan, Cocody</li>
+                <li>Budget: 18 500 000 FCFA</li>
+                <li>Urgence: élevée</li>
+              </ul>
+              <div class="avatars">
+                <span>S</span>
+                <span>K</span>
+                <span>M</span>
+                <span>+18</span>
+              </div>
+            </div>
+            <div class="visual-card floating-card">
+              <span>Top Pro</span>
+              <strong>4.9/5</strong>
+              <small>122 missions réussies</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Métiers</span>
+              <h2>Les secteurs du BTP réunis</h2>
+            </div>
+            <a href="offres.html" class="text-link">Voir tous les appels</a>
+          </div>
+
+          <div class="category-grid" id="category-grid"></div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Offres récentes</span>
+              <h2>Appels d'offres à fort potentiel</h2>
+            </div>
+            <a href="offres.html" class="text-link">Explorer</a>
+          </div>
+
+          <div class="offer-grid" id="featured-offers"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Professionnels</span>
+              <h2>Top prestataires vérifiés</h2>
+            </div>
+            <a href="professionnels.html" class="text-link">Voir la grille</a>
+          </div>
+
+          <div class="pro-grid" id="featured-pros"></div>
+        </div>
+      </section>
+
+      <section class="section alt-bg">
+        <div class="container">
+          <div class="section-head center">
+            <div>
+              <span class="eyebrow">Processus</span>
+              <h2>Comment ça marche</h2>
+            </div>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <span class="step-no">01</span>
+              <h3>Publiez votre besoin</h3>
+              <p>Décrivez votre projet, budget, ville et urgence.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-no">02</span>
+              <h3>Validation admin</h3>
+              <p>AFRIC-CONNECT vérifie la demande, l’identité et le niveau de confiance.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-no">03</span>
+              <h3>Recevez des candidatures</h3>
+              <p>Seules les demandes validées et les profils KYC confirmés sont transmis.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-no">04</span>
+              <h3>Relation sécurisée</h3>
+              <p>La mise en relation finale est autorisée uniquement par l’admin.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-head center">
+            <div>
+              <span class="eyebrow">Témoignages</span>
+              <h2>Des projets réussis, des relations solides</h2>
+            </div>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>« La plateforme nous a permis de sécuriser notre chantier avec des prestataires vérifiés et de gagner du temps. »</p>
+              <div class="person">
+                <strong>Fatou Sarr</strong>
+                <span>Client - Dakar</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>« J’ai trouvé des chantiers sans fraude ni perte de temps. Le système de validation donne une vraie crédibilité. »</p>
+              <div class="person">
+                <strong>Amadou Koné</strong>
+                <span>Chef de chantier - Abidjan</span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>« Très bonne plateforme pour la gouvernance des projets et la conformité des prestataires. »</p>
+              <div class="person">
+                <strong>Salif Traoré</strong>
+                <span>Architecte - Bamako</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pricing-section">
+        <div class="container">
+          <div class="section-head center">
+            <div>
+              <span class="eyebrow">Abonnements</span>
+              <h2>Des formules claires pour chaque acteur</h2>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <span class="plan-label">Client</span>
+              <h3>5 000 FCFA / mois</h3>
+              <ul>
+                <li>Publication d'offres</li>
+                <li>Validation admin</li>
+                <li>Accès aux candidatures</li>
+                <li>Messagerie sécurisée</li>
+              </ul>
+              <a href="tarifs.html" class="btn btn-secondary">Voir détails</a>
+            </div>
+
+            <div class="pricing-card featured">
+              <span class="plan-label">Professionnel</span>
+              <h3>2 000 FCFA / mois</h3>
+              <ul>
+                <li>Profil pro vérifié</li>
+                <li>Postulation validée</li>
+                <li>Portfolio + références</li>
+                <li>Accès à la marketplace</li>
+              </ul>
+              <a href="tarifs.html" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section trust-section">
+        <div class="container trust-box">
+          <div>
+            <span class="eyebrow">Confiance & sécurité</span>
+            <h2>Un cadre de confiance pour chaque mission</h2>
+          </div>
+          <div class="trust-list">
+            <span>KYC obligatoire</span>
+            <span>Abonnement validé</span>
+            <span>Contact masqué</span>
+            <span>Signalement anti-fraude</span>
+          </div>
+          <a href="confiance.html" class="btn btn-primary">En savoir plus</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a href="index.html" class="logo footer-logo">
+            <span class="logo-mark">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M14 18h22v8H14zm0 14h34v8H14zm0 14h18v8H14zm30-12 12-10v32h-8V28l-4 4z" fill="currentColor"/>
+                <path d="M44 15l16 12-4 4-12-10z" fill="#FF6B00" opacity="0.9"/>
+                <path d="M18 48h8v10h-8zM35 48h8v10h-8z" fill="#00A651" opacity="0.9"/>
+              </svg>
+            </span>
+            <span class="logo-text">
+              <strong>AFRIC</strong>
+              <small>CONNECT</small>
+            </span>
+          </a>
+          <p>La plateforme de référence pour connecter les projets BTP dans l'espace UEMOA.</p>
+        </div>
+
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="offres.html">Offres</a></li>
+            <li><a href="professionnels.html">Professionnels</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="comment-ca-marche.html">Comment ça marche</a></li>
+            <li><a href="confiance.html">Confiance & sécurité</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kyc.html">KYC</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>contact@afric-connect.africa</li>
+            <li>+228 90793298</li>
+            <li>Lomé, TOGO</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <span>© 2026 AFRIC-CONNECT. Tous droits réservés.</span>
+          <span>Confiance, sécurité, transparence.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="app-runtime.js"></script>
+  </body>
+</html>

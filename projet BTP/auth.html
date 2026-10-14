@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion / Inscription | AFRIC-CONNECT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="AFRIC-CONNECT home">
+          <span class="logo-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 18h22v8H14zm0 14h34v8H14zm0 14h18v8H14zm30-12 12-10v32h-8V28l-4 4z" fill="currentColor"/><path d="M44 15l16 12-4 4-12-10z" fill="#FF6B00" opacity="0.9"/><path d="M18 48h8v10h-8zM35 48h8v10h-8z" fill="#00A651" opacity="0.9"/></svg></span>
+          <span class="logo-text"><strong>AFRIC</strong><small>CONNECT</small></span>
+        </a>
+        <nav class="main-nav"><a href="index.html">Accueil</a><a href="offres.html">Appels d'Offres</a><a href="professionnels.html">Professionnels</a><a href="tarifs.html">Tarifs</a><a href="comment-ca-marche.html">Comment ça marche</a></nav>
+        <div class="header-actions"><a href="auth.html" class="btn btn-outline">Se connecter</a><a href="auth.html" class="btn btn-primary">S'inscrire</a><a href="dashboard-client.html" class="btn btn-accent">Publier un appel d'offre</a></div>
+      </div>
+    </header>
+
+    <main class="page-section">
+      <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;">
+        <div class="form-card">
+          <span class="eyebrow">Connexion</span>
+          <h2 style="margin-top:12px; color:var(--primary); font-family:'Poppins',sans-serif;">Accédez à votre espace</h2>
+          <form class="form-grid" style="margin-top:22px;" data-login-form>
+            <label>Email<input name="email" type="email" placeholder="prenom@mail.com" required /></label>
+            <label>Mot de passe<input name="password" type="password" placeholder="8 caractères minimum" minlength="8" required /></label>
+            <button class="btn btn-primary">Se connecter</button>
+          </form>
+        </div>
+
+        <div class="form-card">
+          <span class="eyebrow">Inscription</span>
+          <h2 style="margin-top:12px; color:var(--primary); font-family:'Poppins',sans-serif;">Créer un compte</h2>
+          <form class="form-grid" style="margin-top:22px;" data-register-form>
+            <label>Nom complet<input name="name" type="text" placeholder="Prénom Nom" required /></label>
+            <label>Type de compte<select name="role"><option value="client">Client</option><option value="professional">Professionnel</option></select></label>
+            <label>Email<input name="email" type="email" placeholder="votre@email.com" required /></label>
+            <label>Téléphone<input name="phone" type="text" placeholder="+225 ..." /></label>
+            <label>Pays UEMOA<select name="country" required><option value="">Sélectionner</option><option>Bénin</option><option>Burkina Faso</option><option>Côte d'Ivoire</option><option>Guinée-Bissau</option><option>Mali</option><option>Niger</option><option>Sénégal</option><option>Togo</option></select></label>
+            <label>Mot de passe<input name="password" type="password" placeholder="8 caractères minimum" minlength="8" required /></label>
+            <button class="btn btn-primary">S'inscrire</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><a href="index.html" class="logo footer-logo">...</a><p>La plateforme de référence pour connecter les projets BTP dans l'espace UEMOA.</p></div>
+        <div><h4>Navigation</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="offres.html">Offres</a></li><li><a href="professionnels.html">Professionnels</a></li><li><a href="tarifs.html">Tarifs</a></li></ul></div>
+        <div><h4>Ressources</h4><ul><li><a href="comment-ca-marche.html">Comment ça marche</a></li><li><a href="confiance.html">Confiance & sécurité</a></li><li><a href="faq.html">FAQ</a></li><li><a href="kyc.html">KYC</a></li></ul></div>
+        <div><h4>Contact</h4><ul><li>contact@afric-connect.africa</li><li>+228 90793298</li><li>Lomé, TOGO</li></ul></div>
+      </div>
+      <div class="footer-bottom"><div class="container"><span>© 2026 AFRIC-CONNECT.</span><span>Confiance, sécurité, transparence.</span></div></div>
+    </footer>
+    <script src="app-runtime.js"></script>
+  </body>
+</html>
