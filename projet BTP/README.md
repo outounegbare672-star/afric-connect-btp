@@ -1,26 +1,26 @@
 # AFRIC-CONNECT
 
-Prototype fonctionnel d'une marketplace BTP réservée aux huit pays de l'UEMOA : comptes utilisateurs, sessions, publication d'appels d'offres, candidatures et stockage persistant local.
+Marketplace BTP pour les huit pays de l'UEMOA : authentification Supabase, profils professionnels, appels d'offres et candidatures.
 
 ## Démarrage
 
-Ouvrez le fichier `index.html` dans un navigateur, ou lancez un petit serveur local :
+Le serveur Node.js doit être lancé pour utiliser les API. Configurez d'abord Supabase :
 
 ```powershell
 cd "c:\Users\LENOVO\Desktop\afric-connect\projet BTP"
+Copy-Item .env.example .env
+# Renseignez SUPABASE_URL, SUPABASE_ANON_KEY et ADMIN_PASSWORD dans .env
 npm.cmd start
 ```
 
-Puis ouvrez : <http://localhost:8000>
+Appliquez le script `supabase/migrations/20261014000100_auth_and_marketplace.sql` dans l'éditeur SQL du projet Supabase. Ajoutez ensuite `http://localhost:8000/auth.html` aux URL de redirection autorisées dans les paramètres Auth de Supabase. Ouvrez <http://localhost:8000>.
 
-Lien public Render : <https://afric-connect.onrender.com>
-
-Le serveur est sans dépendance externe. Les données de démonstration et les nouveaux comptes sont enregistrés dans `data/db.json`. Pour une mise en production, remplacer ce stockage par PostgreSQL, ajouter une gestion de secrets et activer HTTPS.
+Les nouveaux comptes et sessions sont gérés par Supabase Auth. Les profils, offres et candidatures sont enregistrés dans Supabase avec des politiques RLS. Les données démo locales restent disponibles pour le catalogue. Les comptes de l'ancien système JSON ne sont pas transférés automatiquement : ils doivent être recréés dans Supabase Auth avec leur adresse email ; leur ancien mot de passe ne sera pas réutilisable.
 
 ## Contenu
 
-- Inscription et connexion avec mots de passe hashés
-- Session persistante par token
+- Inscription et connexion Supabase Auth avec renouvellement des sessions
+- Récupération de mot de passe par email
 - Catalogue d'appels d'offres en temps réel
 - Publication d'offres par les clients
 - Candidature des professionnels
@@ -29,6 +29,7 @@ Le serveur est sans dépendance externe. Les données de démonstration et les n
 
 ## Données et accès
 
-- Les candidatures et l'identifiant du propriétaire ne sont pas exposés par l'API publique des offres.
-- Les coordonnées privées des professionnels ne sont pas publiées dans l'annuaire.
-- L'administration reste désactivée tant que `ADMIN_PASSWORD` n'est pas défini. Configurez-le comme secret dans Render avant d'utiliser `admin.html`.
+- Les nouveaux mots de passe sont gérés par Supabase Auth. La migration révoque l'accès des rôles `PUBLIC`, `anon` et `authenticated` à l'ancienne table `users` et supprime ses politiques RLS existantes.
+- Les coordonnées privées des professionnels ne sont pas publiées dans l'annuaire public.
+- L'administration nécessite `ADMIN_PASSWORD` et la clé serveur `SUPABASE_SERVICE_ROLE_KEY`. Configurez-les uniquement comme secrets dans Render ; ne publiez jamais cette clé dans le navigateur ni dans Git.
+- Render utilise `render.yaml`. Renseignez les secrets Supabase dans le service et autorisez `https://afric-connect.onrender.com/auth.html` comme URL de redirection Auth.

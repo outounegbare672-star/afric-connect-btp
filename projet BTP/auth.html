@@ -23,7 +23,7 @@
 
     <main class="page-section">
       <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;">
-        <div class="form-card">
+        <div class="form-card" data-auth-panel data-login-panel>
           <span class="eyebrow">Connexion</span>
           <h2 style="margin-top:12px; color:var(--primary); font-family:'Poppins',sans-serif;">Accédez à votre espace</h2>
           <form class="form-grid" style="margin-top:22px;" data-login-form>
@@ -31,9 +31,10 @@
             <label>Mot de passe<input name="password" type="password" placeholder="8 caractères minimum" minlength="8" required /></label>
             <button class="btn btn-primary">Se connecter</button>
           </form>
+          <button class="text-link" type="button" data-show-password-reset>Mot de passe oublié ?</button>
         </div>
 
-        <div class="form-card">
+        <div class="form-card" data-auth-panel data-register-panel>
           <span class="eyebrow">Inscription</span>
           <h2 style="margin-top:12px; color:var(--primary); font-family:'Poppins',sans-serif;">Créer un compte</h2>
           <form class="form-grid" style="margin-top:22px;" data-register-form>
@@ -44,6 +45,22 @@
             <label>Pays UEMOA<select name="country" required><option value="">Sélectionner</option><option>Bénin</option><option>Burkina Faso</option><option>Côte d'Ivoire</option><option>Guinée-Bissau</option><option>Mali</option><option>Niger</option><option>Sénégal</option><option>Togo</option></select></label>
             <label>Mot de passe<input name="password" type="password" placeholder="8 caractères minimum" minlength="8" required /></label>
             <button class="btn btn-primary">S'inscrire</button>
+          </form>
+        </div>
+        <div class="form-card" data-auth-panel data-reset-panel hidden>
+          <span class="eyebrow">Récupération</span>
+          <h2 style="margin-top:12px; color:var(--primary); font-family:'Poppins',sans-serif;">Réinitialiser le mot de passe</h2>
+          <form class="form-grid" style="margin-top:22px;" data-password-reset-form>
+            <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+            <button class="btn btn-primary">Envoyer le lien</button>
+          </form>
+        </div>
+        <div class="form-card" data-auth-panel data-password-update-panel hidden>
+          <span class="eyebrow">Nouveau mot de passe</span>
+          <h2 style="margin-top:12px; color:var(--primary); font-family:'Poppins',sans-serif;">Choisir un nouveau mot de passe</h2>
+          <form class="form-grid" style="margin-top:22px;" data-password-update-form>
+            <label>Nouveau mot de passe<input name="password" type="password" minlength="8" autocomplete="new-password" required /></label>
+            <button class="btn btn-primary">Mettre à jour</button>
           </form>
         </div>
       </div>

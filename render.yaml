@@ -4,11 +4,19 @@ services:
     runtime: node
     plan: free
     rootDir: projet BTP
-    buildCommand: npm install
+    buildCommand: npm ci
     startCommand: node server.js
     healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
         value: 24
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_REDIRECT_URL
+        value: https://afric-connect.onrender.com/auth.html
       - key: ADMIN_PASSWORD
         sync: false
