@@ -977,6 +977,342 @@ button, input, select, textarea {
   gap: 22px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+.dashboard-item {
+  display: grid;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.dashboard-item:last-child {
+  border-bottom: 0;
+}
+
+.dashboard-item p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.application-heading,
+.dashboard-actions,
+.admin-kyc-section .section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.application-message {
+  white-space: pre-wrap;
+}
+
+.dashboard-actions > span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.message-panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.message-list {
+  display: grid;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.message-bubble {
+  max-width: 85%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: white;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.message-bubble span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.message-bubble.own-message {
+  justify-self: end;
+  background: var(--primary-soft);
+}
+
+.message-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 10px;
+}
+
+.message-form textarea {
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  resize: vertical;
+}
+
+.review-form {
+  grid-template-columns: minmax(130px, 0.6fr) 1.4fr auto;
+  align-items: end;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.review-list {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--bg);
+}
+
+.review-list p {
+  margin: 0 0 8px;
+}
+
+.review-list p:last-child {
+  margin-bottom: 0;
+}
+
+.preference-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.preference-options label,
+[data-notification-preferences] fieldset > label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.preference-options input,
+[data-notification-preferences] fieldset > label input {
+  min-height: auto;
+}
+
+[data-notification-preferences] fieldset {
+  display: grid;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+[data-notification-preferences] legend {
+  padding: 0 6px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.admin-kyc-section {
+  margin-top: 22px;
+}
+
+.admin-kyc-card {
+  grid-template-columns: 1fr minmax(280px, 0.8fr);
+  align-items: start;
+}
+
+.admin-kyc-card .form-grid {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.status.rejected {
+  background: #ffe7e7;
+  color: #d15151;
+}
+
+.status.accepted,
+.status.completed {
+  background: #eafaf2;
+  color: var(--green);
+}
+
+.status.suspended {
+  background: #ffe7e7;
+  color: #d15151;
+}
+
+.service-filters {
+  margin-bottom: 24px;
+}
+
+.service-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.service-card h3,
+.service-card p {
+  margin: 0;
+}
+
+.service-card-top,
+.service-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.service-category,
+.service-meta {
+  color: var(--muted);
+}
+
+.service-price {
+  color: var(--primary);
+  font: 700 1.3rem "Poppins", sans-serif;
+}
+
+.service-price span {
+  color: var(--muted);
+  font: 500 0.9rem "Inter", sans-serif;
+}
+
+.service-inquiry-form {
+  display: grid;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.service-inquiry-form label,
+.service-publish-layout form > label,
+.service-form-row label {
+  display: grid;
+  gap: 7px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.service-inquiry-form input,
+.service-inquiry-form textarea,
+.service-publish-layout input,
+.service-publish-layout select,
+.service-publish-layout textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+}
+
+.service-inquiry-form textarea,
+.service-publish-layout textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.service-inquiry-form .service-consent,
+.service-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.service-consent input,
+.service-checkbox input {
+  width: auto;
+  min-height: auto;
+  margin-top: 4px;
+}
+
+.service-publish-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1fr);
+  align-items: start;
+  gap: 40px;
+}
+
+.service-publish-layout h2,
+.service-promo h2 {
+  color: var(--primary);
+  font-family: "Poppins", sans-serif;
+}
+
+.service-publish-layout p,
+.service-promo p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.service-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.service-dashboard {
+  margin-top: 24px;
+}
+
+.service-dashboard-inquiries {
+  margin-top: 24px;
+}
+
+.service-inquiry {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.service-contact {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  overflow-wrap: anywhere;
+}
+
+.service-promo-section {
+  background: var(--primary-soft);
+}
+
+.service-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
 .panel-card,
 .form-card,
 .filter-card {
@@ -1191,6 +1527,30 @@ button, input, select, textarea {
   .category-grid,
   .metric-grid {
     grid-template-columns: 1fr;
+  }
+
+  .review-form,
+  .admin-kyc-card {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-kyc-card .form-grid {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .message-form {
+    grid-template-columns: 1fr;
+  }
+
+  .service-listing-grid,
+  .service-publish-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-promo {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .search-bar {

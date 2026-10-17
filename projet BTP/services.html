@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engins et matériaux | AFRIC-CONNECT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="AFRIC-CONNECT, accueil">
+          <span class="logo-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 18h22v8H14zm0 14h34v8H14zm0 14h18v8H14zm30-12 12-10v32h-8V28l-4 4z" fill="currentColor"/><path d="M44 15l16 12-4 4-12-10z" fill="#FF6B00" opacity="0.9"/><path d="M18 48h8v10h-8zM35 48h8v10h-8z" fill="#00A651" opacity="0.9"/></svg></span>
+          <span class="logo-text"><strong>AFRIC</strong><small>CONNECT</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+          <a href="index.html">Accueil</a><a href="offres.html">Appels d'offres</a>
+          <a href="services.html" class="active">Engins &amp; matériaux</a><a href="professionnels.html">Professionnels</a>
+        </nav>
+        <div class="header-actions">
+          <a href="auth.html" class="btn btn-outline">Se connecter</a>
+          <a href="dashboard-client.html" class="btn btn-primary">Mon espace</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Petites annonces BTP</span>
+          <h1>Louez vos engins. Approvisionnez vos chantiers.</h1>
+          <p>Comparez les équipements disponibles et les matériaux proposés dans l’espace UEMOA. Contactez directement le fournisseur via une demande de disponibilité — aucun paiement n’est réalisé sur la plateforme.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogue">Parcourir les annonces</a>
+            <a class="btn btn-outline" href="#publier">Publier une annonce</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section" id="catalogue">
+        <div class="container">
+          <form class="filter-card service-filters" data-service-filters>
+            <div class="filter-bar">
+              <input type="search" name="query" placeholder="Engin, gravier, sable…" aria-label="Rechercher une annonce" />
+              <select name="kind" aria-label="Type d’annonce">
+                <option value="">Locations et matériaux</option>
+                <option value="equipment_rental">Location d’engins</option>
+                <option value="material_sale">Vente de matériaux</option>
+              </select>
+              <select name="country" aria-label="Pays">
+                <option value="">Tous les pays</option>
+                <option>Bénin</option><option>Burkina Faso</option><option>Côte d'Ivoire</option>
+                <option>Guinée-Bissau</option><option>Mali</option><option>Niger</option><option>Sénégal</option><option>Togo</option>
+              </select>
+              <button class="btn btn-primary" type="submit">Rechercher</button>
+            </div>
+          </form>
+          <div class="service-listing-grid" data-service-listings aria-live="polite">
+            <p class="empty-state">Chargement des annonces…</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section alt-bg" id="publier">
+        <div class="container service-publish-layout">
+          <div>
+            <span class="eyebrow">Vous êtes fournisseur ?</span>
+            <h2>Publiez gratuitement votre annonce</h2>
+            <p>Proposez une pelle, un camion benne, du gravier, du sable ou du fer à béton. Les clients vous contactent depuis leur espace AFRIC-CONNECT après avoir explicitement autorisé le partage de leurs coordonnées.</p>
+          </div>
+          <form class="form-card form-grid" data-service-publish>
+            <label>Type d’annonce
+              <select name="kind" required>
+                <option value="equipment_rental">Location d’engin</option>
+                <option value="material_sale">Vente de matériau</option>
+              </select>
+            </label>
+            <label>Catégorie
+              <select name="category" required data-service-category></select>
+            </label>
+            <label>Titre de l’annonce<input name="title" required minlength="5" maxlength="120" placeholder="Ex. Pelle hydraulique 20 tonnes" /></label>
+            <label>Description<textarea name="description" maxlength="2000" placeholder="Précisez les caractéristiques, les conditions et les informations utiles."></textarea></label>
+            <div class="service-form-row">
+              <label>Prix (FCFA)<input name="price" type="number" min="1" step="1" required placeholder="Ex. 150000" /></label>
+              <label>Unité de prix<select name="priceUnit" required data-service-unit></select></label>
+            </div>
+            <div class="service-form-row">
+              <label data-quantity-label>Disponibilité<input name="quantityAvailable" type="number" min="0.01" step="0.01" required placeholder="Ex. 2" /></label>
+              <label>Ville<input name="city" required minlength="2" maxlength="100" placeholder="Ex. Abidjan" /></label>
+            </div>
+            <label>Pays<select name="country" required>
+              <option value="">Sélectionner</option><option>Bénin</option><option>Burkina Faso</option>
+              <option>Côte d'Ivoire</option><option>Guinée-Bissau</option><option>Mali</option>
+              <option>Niger</option><option>Sénégal</option><option>Togo</option>
+            </select></label>
+            <label data-condition-field>État de l’engin
+              <select name="condition"><option value="">Non précisé</option><option>Neuf</option><option>Très bon état</option><option>Bon état</option><option>État correct</option></select>
+            </label>
+            <label class="service-checkbox"><input type="checkbox" name="deliveryAvailable" /> Livraison possible</label>
+            <button class="btn btn-primary" type="submit">Publier l’annonce</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom"><div><span>© 2026 AFRIC-CONNECT.</span><a href="dashboard-client.html">Mon espace</a></div></div>
+    </footer>
+    <script src="app-runtime.js"></script>
+    <script src="marketplace-runtime.js"></script>
+  </body>
+</html>

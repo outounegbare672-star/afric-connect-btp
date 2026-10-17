@@ -16,8 +16,8 @@
           <span class="logo-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 18h22v8H14zm0 14h34v8H14zm0 14h18v8H14zm30-12 12-10v32h-8V28l-4 4z" fill="currentColor"/><path d="M44 15l16 12-4 4-12-10z" fill="#FF6B00" opacity="0.9"/><path d="M18 48h8v10h-8zM35 48h8v10h-8z" fill="#00A651" opacity="0.9"/></svg></span>
           <span class="logo-text"><strong>AFRIC</strong><small>CONNECT</small></span>
         </a>
-        <nav class="main-nav"><a href="index.html">Accueil</a><a href="offres.html">Offres</a><a href="professionnels.html">Professionnels</a><a href="tarifs.html">Tarifs</a><a href="comment-ca-marche.html">Comment ça marche</a></nav>
-        <div class="header-actions"><a href="index.html" class="btn btn-outline" data-logout>Déconnexion</a><a href="dashboard-client.html" class="btn btn-primary">Mon compte</a></div>
+        <nav class="main-nav"><a href="index.html">Accueil</a><a href="offres.html">Offres</a><a href="services.html">Engins &amp; matériaux</a><a href="professionnels.html">Professionnels</a><a href="tarifs.html">Tarifs</a></nav>
+        <div class="header-actions"><a href="index.html" class="btn btn-outline" data-logout>Déconnexion</a><a href="dashboard-client.html" class="btn btn-primary" data-dashboard-link>Mon espace</a></div>
       </div>
     </header>
 
@@ -25,51 +25,88 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Dashboard client</span>
+            <span class="eyebrow" data-dashboard-role>Mon espace</span>
             <h2>Bienvenue, <span data-user-name>M. Diallo</span></h2>
           </div>
-          <a href="offres.html" class="btn btn-primary">Publier un appel d'offre</a>
+          <a href="offres.html" class="btn btn-primary" data-professional-link hidden>Explorer les appels d’offres</a>
+          <a href="kyc.html" class="btn btn-outline">Vérification KYC</a>
         </div>
 
-        <div class="metric-grid" style="margin-bottom:22px;">
-          <div class="metric-box"><span>Offres publiées</span><strong>24</strong></div>
-          <div class="metric-box"><span>Candidatures reçues</span><strong>128</strong></div>
-          <div class="metric-box"><span>Présélections</span><strong>12</strong></div>
-          <div class="metric-box"><span>Réputation</span><strong>4.9</strong></div>
+        <div class="metric-grid" data-dashboard-stats style="margin-bottom:22px;">
+          <div class="metric-box"><span>Chargement</span><strong>…</strong></div>
         </div>
 
         <div class="page-grid">
-          <div class="panel-card">
+          <div class="panel-card" data-client-only>
             <h3 style="margin-top:0; color:var(--primary);">Publier un appel d'offre</h3>
             <form class="form-grid" data-offer-form>
               <label>Titre<input name="title" type="text" placeholder="Construction d'un immeuble" required /></label>
-              <label>Catégorie<select name="category"><option>Bâtiment</option><option>Route</option><option>Rénovation</option><option>Étude</option></select></label>
+              <label>Catégorie<select name="category" required><option>Bâtiment</option><option>Maçonnerie</option><option>Électricité</option><option>Route</option><option>Architecture</option><option>Rénovation</option><option>Étude</option><option>Forage</option></select></label>
               <label>Budget estimé<input name="budget" type="text" placeholder="18 500 000 FCFA" required /></label>
               <label>Localisation<input name="city" type="text" placeholder="Abidjan, Cocody" required /></label>
+              <label>Pays<select name="country" required><option value="">Sélectionner</option><option>Bénin</option><option>Burkina Faso</option><option>Côte d'Ivoire</option><option>Guinée-Bissau</option><option>Mali</option><option>Niger</option><option>Sénégal</option><option>Togo</option></select></label>
+              <label>Urgence<select name="urgency"><option>Faible</option><option selected>Moyen</option><option>Urgent</option></select></label>
+              <label>Délai estimé<input name="deadline" type="text" placeholder="30 jours" /></label>
               <label>Description<textarea name="description" placeholder="Décrivez votre projet..."></textarea></label>
               <button class="btn btn-primary">Soumettre pour validation</button>
             </form>
           </div>
 
-          <div class="panel-card">
-            <h3 style="margin-top:0; color:var(--primary);">Candidatures validées</h3>
-            <ul class="simple-list">
-              <li>Maçonnerie – 8 candidatures en attente d'autorisation admin</li>
-              <li>Électricité – 6 profils validés</li>
-              <li>Route – 4 profils présélectionnés</li>
-              <li>Architecture – 3 dossiers confirmés</li>
-            </ul>
+          <div class="panel-card" data-professional-only hidden>
+            <h3 style="margin-top:0; color:var(--primary);">Mes alertes d’offres</h3>
+            <form class="form-grid" data-notification-preferences>
+              <fieldset>
+                <legend>Pays souhaités (aucun choix = tous les pays)</legend>
+                <div class="preference-options">
+                  <label><input type="checkbox" name="countries" value="Bénin" /> Bénin</label>
+                  <label><input type="checkbox" name="countries" value="Burkina Faso" /> Burkina Faso</label>
+                  <label><input type="checkbox" name="countries" value="Côte d'Ivoire" /> Côte d’Ivoire</label>
+                  <label><input type="checkbox" name="countries" value="Guinée-Bissau" /> Guinée-Bissau</label>
+                  <label><input type="checkbox" name="countries" value="Mali" /> Mali</label>
+                  <label><input type="checkbox" name="countries" value="Niger" /> Niger</label>
+                  <label><input type="checkbox" name="countries" value="Sénégal" /> Sénégal</label>
+                  <label><input type="checkbox" name="countries" value="Togo" /> Togo</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Métiers (aucun choix = tous les métiers)</legend>
+                <div class="preference-options">
+                  <label><input type="checkbox" name="expertise" value="Bâtiment" /> Bâtiment</label>
+                  <label><input type="checkbox" name="expertise" value="Maçonnerie" /> Maçonnerie</label>
+                  <label><input type="checkbox" name="expertise" value="Électricité" /> Électricité</label>
+                  <label><input type="checkbox" name="expertise" value="Route" /> Route</label>
+                  <label><input type="checkbox" name="expertise" value="Architecture" /> Architecture</label>
+                  <label><input type="checkbox" name="expertise" value="Rénovation" /> Rénovation</label>
+                  <label><input type="checkbox" name="expertise" value="Étude" /> Étude</label>
+                  <label><input type="checkbox" name="expertise" value="Forage" /> Forage</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Canaux</legend>
+                <label><input type="checkbox" name="emailEnabled" /> Recevoir les alertes par email</label>
+                <label><input type="checkbox" name="whatsappEnabled" /> Recevoir les alertes par WhatsApp (numéro du profil)</label>
+              </fieldset>
+              <button class="btn btn-primary">Enregistrer mes préférences</button>
+            </form>
+          </div>
+
+          <div class="panel-card" data-client-only>
+            <h3 style="margin-top:0; color:var(--primary);">Mes appels d’offres</h3>
+            <div data-dashboard-offers><p>Chargement…</p></div>
           </div>
 
           <div class="panel-card">
-            <h3 style="margin-top:0; color:var(--primary);">Historique</h3>
-            <ul class="simple-list">
-              <li>Villa familiale – 19 candidatures</li>
-              <li>Rénovation centre commercial – 12 candidatures</li>
-              <li>Aménagement route – 17 candidatures</li>
-            </ul>
+            <h3 style="margin-top:0; color:var(--primary);" data-applications-heading>Mes candidatures</h3>
+            <div data-dashboard-applications><p>Chargement…</p></div>
           </div>
         </div>
+        <section class="panel-card service-dashboard" data-service-dashboard>
+          <div class="section-head">
+            <div><span class="eyebrow">Équipement & approvisionnement</span><h2>Locations, matériaux et demandes de contact</h2></div>
+            <a class="btn btn-outline" href="services.html">Voir les annonces</a>
+          </div>
+          <p>Publiez vos engins ou matériaux et retrouvez ici les demandes reçues ou envoyées.</p>
+        </section>
       </div>
     </main>
 
@@ -83,5 +120,6 @@
       <div class="footer-bottom"><div class="container"><span>© 2026 AFRIC-CONNECT.</span><span>Confiance, sécurité, transparence.</span></div></div>
     </footer>
     <script src="app-runtime.js"></script>
+    <script src="marketplace-runtime.js"></script>
   </body>
 </html>

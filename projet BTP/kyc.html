@@ -26,7 +26,7 @@
         <div class="container">
           <span class="eyebrow">Vérification</span>
           <h1>Vérification KYC obligatoire</h1>
-          <p>Pour sécuriser chaque transaction, chaque utilisateur doit soumettre une vérification d’identité avant d’accéder à la plateforme complète.</p>
+          <p>Déposez vos justificatifs dans un espace privé et suivez leur examen. Les pièces ne sont accessibles qu’à vous et à l’équipe de vérification.</p>
         </div>
       </section>
 
@@ -34,24 +34,31 @@
         <div class="container" style="display:grid; grid-template-columns:1.2fr .8fr; gap:22px;">
           <div class="form-card">
             <h3 style="margin-top:0; color:var(--primary);">Soumettre la vérification</h3>
-            <div class="form-grid">
-              <label>Nom complet<input type="text" placeholder="Votre nom complet" /></label>
-              <label>Pays UEMOA / Ville<input type="text" placeholder="Togo, Lomé" /></label>
-              <label>Pièce d'identité<select><option>CNI</option><option>Passeport</option><option>Carte de séjour</option></select></label>
-              <label>Photo de profil<input type="file" /></label>
-              <label>Pièce recto-verso<input type="file" /></label>
-              <label>Selfie avec pièce<input type="file" /></label>
+            <form class="form-grid" data-kyc-form>
+              <label>Pièce d'identité
+                <select name="documentType" required>
+                  <option value="cni">Carte nationale d’identité</option>
+                  <option value="passport">Passeport</option>
+                  <option value="residence">Carte de séjour</option>
+                </select>
+              </label>
+              <label>Recto ou page d’identité (PDF, JPG, PNG · 4 Mo maximum)
+                <input name="front" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required />
+              </label>
+              <label>Verso (facultatif)
+                <input name="back" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" />
+              </label>
+              <label>Selfie de vérification (facultatif)
+                <input name="selfie" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png" />
+              </label>
+              <p>Les pièces restent privées. N’envoyez pas de documents d’autres personnes.</p>
               <button class="btn btn-primary">Soumettre pour validation</button>
-            </div>
+            </form>
           </div>
 
           <div class="panel-card">
             <h3 style="margin-top:0; color:var(--primary);">Statut</h3>
-            <ul class="simple-list">
-              <li><span class="status review">En attente</span></li>
-              <li>Professionnel: diplôme, attestation, références, photos de chantiers</li>
-              <li>Client: justificatif de propriété ou projet si disponible</li>
-            </ul>
+            <div data-kyc-status><p>Connectez-vous pour consulter ou soumettre votre dossier.</p></div>
           </div>
         </div>
       </section>
@@ -66,5 +73,6 @@
       </div>
       <div class="footer-bottom"><div class="container"><span>© 2026 AFRIC-CONNECT.</span><span>Confiance, sécurité, transparence.</span></div></div>
     </footer>
+    <script src="app-runtime.js"></script>
   </body>
 </html>

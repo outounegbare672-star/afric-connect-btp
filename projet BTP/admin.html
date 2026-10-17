@@ -27,6 +27,15 @@
           <section class="panel-card"><div class="section-head"><div><span class="eyebrow">Modération</span><h2>Appels d'offres</h2></div></div><div class="admin-table-wrap"><table><thead><tr><th>Projet</th><th>Ville</th><th>Budget</th><th>Statut</th><th>Action</th></tr></thead><tbody data-admin-offers></tbody></table></div></section>
           <section class="panel-card"><div class="section-head"><div><span class="eyebrow">Membres</span><h2>Utilisateurs</h2></div></div><div class="admin-table-wrap"><table><thead><tr><th>Nom</th><th>Email</th><th>Pays</th><th>Rôle</th></tr></thead><tbody data-admin-users></tbody></table></div></section>
         </div>
+        <section class="panel-card admin-kyc-section">
+          <div class="section-head"><div><span class="eyebrow">Vérification</span><h2>Dossiers KYC en attente</h2></div></div>
+          <div data-admin-kyc><p>Chargement des dossiers…</p></div>
+        </section>
+        <section class="panel-card admin-kyc-section">
+          <div class="section-head"><div><span class="eyebrow">Notifications</span><h2>Livraisons d’alertes</h2></div>
+            <button class="btn btn-outline" data-retry-notifications>Relancer les alertes en échec</button>
+          </div>
+        </section>
       </section>
     </main>
     <script src="admin-runtime.js"></script>
